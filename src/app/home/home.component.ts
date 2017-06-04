@@ -11,8 +11,8 @@ export class HomeComponent implements OnInit {
   constructor(private router: Router) { }
 
   //If you want to route to a different route during an event you can inject the router
-  onLoadServers(){
-   this.router.navigate(['/servers']);
+  onLoadServer(id: number){
+   this.router.navigate(['/servers', id, 'edit'], {queryParams:{allowEdit: '1'}, fragment:'loading'});
   }
 
   ngOnInit() {
